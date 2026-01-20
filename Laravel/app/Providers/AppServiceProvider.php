@@ -12,9 +12,14 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(
-        \App\Repositories\Interfaces\MemberRepositoryInterface::class,
-        \App\Repositories\MemberRepository::class
-    );
+            \App\Repositories\MemberRepositoryInterface::class,
+            \App\Repositories\MemberRepository::class
+        );
+        
+        $this->app->bind(
+            \App\Repositories\MovieRepositoryInterface::class,
+            \App\Repositories\MovieRepository::class
+        );
     }
 
     /**
@@ -25,3 +30,5 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 }
+
+
