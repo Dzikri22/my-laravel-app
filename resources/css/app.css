@@ -1,0 +1,405 @@
+/* ==================== CUSTOM NETFLIX THEME ==================== */
+
+:root {
+    --netflix-red: #e50914;
+    --dark-bg: #141414;
+    --card-bg: #221f1f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent) !important;
+    transition: background 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: var(--netflix-red) !important;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--netflix-red) !important;
+}
+
+.nav-link.active {
+    color: var(--netflix-red) !important;
+    font-weight: 600;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    margin-bottom: 3rem;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1;
+}
+
+.hero-section > div {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero-section .btn {
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1.4s ease;
+}
+
+.hero-section .btn-danger {
+    background-color: var(--netflix-red);
+    border-color: var(--netflix-red);
+}
+
+.hero-section .btn-danger:hover {
+    background-color: #f40612;
+    border-color: #f40612;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+/* ==================== MOVIE CARDS ==================== */
+.card-movie {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card-movie img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card-movie:hover img {
+    transform: scale(1.05);
+}
+
+.card-movie .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-movie:hover .overlay {
+    opacity: 1;
+}
+
+.card-movie .overlay button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.card-movie:hover .overlay button {
+    transform: scale(1.2);
+    background-color: var(--netflix-red) !important;
+}
+
+.card-movie h6 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-movie small {
+    display: block;
+    font-size: 0.8rem;
+}
+
+/* ==================== SECTIONS ==================== */
+section {
+    padding: 2rem 0;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+section h2::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: var(--netflix-red);
+    border-radius: 2px;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: var(--dark-bg);
+    color: #fff;
+    margin-top: 4rem;
+    padding: 3rem 0 2rem;
+}
+
+footer h5,
+footer h6 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--netflix-red) !important;
+}
+
+footer .text-muted {
+    color: #808080 !important;
+}
+
+footer small {
+    color: #666;
+}
+
+/* ==================== MODALS ==================== */
+.modal-content {
+    border: 1px solid #444;
+}
+
+.modal-header {
+    border-bottom: 1px solid #444 !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #444 !important;
+}
+
+.form-control {
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #333 !important;
+    border-color: var(--netflix-red) !important;
+    color: #fff !important;
+    box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+.form-check-label {
+    color: #999;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-danger {
+    background-color: var(--netflix-red);
+    border-color: var(--netflix-red);
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #f40612;
+    border-color: #f40612;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+.btn-secondary {
+    background-color: #333;
+    border-color: #444;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #444;
+    border-color: #555;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--netflix-red);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-movie img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-section .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .card-movie img {
+        height: 150px;
+    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.text-netflix-red {
+    color: var(--netflix-red) !important;
+}
+
+.bg-netflix {
+    background-color: var(--dark-bg) !important;
+}
+
+.shadow-netflix {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+}

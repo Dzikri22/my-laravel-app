@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Interfaces\MemberRepositoryInterface;
+use App\Repositories\MovieRepositoryInterface;
 
 class MemberController extends Controller
 {
-    private $memberRepository;
+    private $movieRepository;
 
-    // Kita "suntikkan" interface-nya di sini
-    public function __construct(MemberRepositoryInterface $memberRepository)
+    public function __construct(MovieRepositoryInterface $movieRepository)
     {
-        $this->memberRepository = $memberRepository;
+        $this->movieRepository = $movieRepository;
     }
 
     public function index()
     {
-        $data = $this->memberRepository->getAllMembers();
-        return view('member_view', ['members' => $data]);
+        $movies = $this->movieRepository->getPopularMovies();
+        
+        return view('member_view', compact('movies'));
     }
 }
